@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="logo.jpg" />
+    <title>Beatz</title>
+  </head>
+  <body>
+    <div class="drum-machine-container">
+      <div class="left-side-container">
+        <div class="user-display">
+          <img src="sound_on.png" alt="" class="sound-icon" id="mute-button" />
+          <ul id="song-recording-list"></ul>
+        </div>
+        <div class="user-interface-container">
+          <div class="user-button stop" id="stop"><div class="stop-text"></div></div>
+          <div class="user-button play"><div class="play-text">▶</div></div>
+          <div class="user-button record" id="record"><div class="record-text">◉</div></div>
+          <div class="user-button loop" id="loop">
+            <div class="symbol loop-text" >↺</div>
+          </div>
+        </div>
+        <div class="drum-kit-container">
+          <div class="drum-side">
+            <div class="drum-kit playable" data-sound="kick" data-key="q">
+              <p>Kick Drum</p>
+              <p >Q</p>
+            </div>
+            <div class="drum-kit playable" data-sound="snare" data-key="w">
+              <p>Snare Hit</p>
+              <p>W</p>
+            </div>
+            <div class="drum-kit playable" data-sound="tom" data-key="e">
+              <p>Tom Hit</p>
+              <p>E</p>
+            </div>
+          </div>
+          <div class="drum-side">
+            <div class="drum-kit playable" data-sound="high-hat" data-key="r">
+              <p>High Hat</p>
+              <p>R</p>
+            </div>
+            <div class="drum-kit playable" data-sound="low-hat" data-key="t">
+              <p>Low Hat</p>
+              <p>T</p>
+            </div>
+            <div class="drum-kit playable" data-sound="symbol" data-key="y">
+              <p>Symbol Crash</p>
+              <p>Y</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="middle-container">
+        <h1 class="sound-effect-header">Sound Effects</h1>
+        <div class="sound-effect playable" data-sound="clap" data-key="u">
+          <p>Clap</p>
+          <p>U</p>
+        </div>
+        <div class="sound-effect playable" data-sound="swoosh" data-key="i">
+          <p>Crash</p>
+          <p>I</p>
+        </div>
+        <div class="sound-effect playable" data-sound="swell" data-key="o">
+          <p>Swell</p>
+          <p>O</p>
+        </div>
+        <div class="sound-effect playable" data-sound="pad" data-key="p">
+          <p>Pad</p>
+          <p>P</p>
+        </div>
+        <div class="sound-effect playable" data-sound="crystal" data-key="[">
+          <p>Chime</p>
+          <p>[</p>
+        </div>
+      </div>
+      <div class="right-side-container">
+        <div class="right-side-button-container">
+          <h1 class="chord-heading">Chords</h1>
+          <div class="button-row">
+            <div
+              class="chord-buttons pink playable"
+              data-sound="c-arp"
+              data-key="7"
+            >
+              <p>C Arp</p>
+              <p>7</p>
+            </div>
+            <div
+              class="chord-buttons pink playable"
+              data-sound="g-arp"
+              data-key="8"
+            >
+              <p>G Arp</p>
+              <p>8</p>
+            </div>
+            <div
+              class="chord-buttons pink playable"
+              data-sound="am-arp"
+              data-key="9"
+            >
+              <p>Am Arp</p>
+              <p>9</p>
+            </div>
+            <div
+              class="chord-buttons pink playable"
+              data-sound="f-arp"
+              data-key="-"
+            >
+              <p>F Arp</p>
+              <p>-</p>
+            </div>
+          </div>
+          <div class="button-row">
+            <div
+              class="chord-buttons blue playable"
+              data-sound="c-voice"
+              data-key="4"
+            >
+              <p>C VOX</p>
+              <p>4</p>
+            </div>
+            <div
+              class="chord-buttons blue playable"
+              data-sound="g-voice"
+              data-key="5"
+            >
+              <p>G VOX</p>
+              <p>5</p>
+            </div>
+            <div
+              class="chord-buttons blue playable"
+              id="am-voice"
+              data-sound="am-voice"
+              data-key="6"
+            >
+              <p>Am VOX</p>
+              <p>6</p>
+            </div>
+            <div
+              class="chord-buttons blue playable"
+              id="f-voice"
+              data-sound="f-voice"
+              data-key="+"
+            >
+              <p>F VOX</p>
+              <p>+</p>
+            </div>
+          </div>
+          <div class="button-row">
+            <div
+              class="chord-buttons orange playable"
+              data-sound="c-string"
+              data-key="1"
+            >
+              <p>C Str</p>
+              <p>1</p>
+            </div>
+            <div
+              class="chord-buttons orange playable"
+              data-sound="g-string"
+              data-key="2"
+            >
+              <p>G Str</p>
+              <p>2</p>
+            </div>
+            <div
+              class="chord-buttons orange playable"
+              data-sound="am-string"
+              data-key="3"
+            >
+              <p>Am Str</p>
+              <p>3</p>
+            </div>
+            <div
+              class="chord-buttons orange playable"
+              data-sound="f-string"
+              data-key="enter"
+            >
+              <p>F Str</p>
+              <p>ENTER</p>
+            </div>
+          </div>
+          <div class="button-row">
+            <div
+              class="chord-buttons teal playable"
+              data-sound="c-bass"
+              data-key="ArrowLeft"
+            >
+              <p>C Syth Bass</p>
+              <p>←</p>
+            </div>
+            <div
+              class="chord-buttons teal playable"
+              data-sound="g-bass"
+              data-key="ArrowUp"
+            >
+              <p>G Syth Bass</p>
+              <p>↑</p>
+            </div>
+            <div
+              class="chord-buttons teal playable"
+              data-sound="am-bass"
+              data-key="ArrowDown"
+            >
+              <p>Am Syth Bass</p>
+              <p>↓</p>
+            </div>
+            <div
+              class="chord-buttons teal playable"
+              data-sound="f-bass"
+              data-key="ArrowRight"
+            >
+              <p>F Syth Bass</p>
+              <p>→</p>
+            </div>
+          </div>
+          <div class="piano">
+            <div data-sound="C" data-key="Z" class="playable key white">
+              <h1 class="letter">Z</h1>
+            </div>
+            <div data-sound="Db" data-key="S" class="playable key black">
+              <h1 class="letter">S</h1>
+            </div>
+            <div data-sound="D" data-key="X" class="playable key white white1">
+              <h1 class="letter">X</h1>
+            </div>
+            <div data-sound="Eb" data-key="D" class="playable key black">
+              <h1 class="letter">D</h1>
+            </div>
+            <div data-sound="E" data-key="C" class="playable key white white1">
+              <h1 class="letter">C</h1>
+            </div>
+            <div data-sound="F" data-key="V" class="playable key white white1">
+              <h1 class="letter">V</h1>
+            </div>
+            <div data-sound="Gb" data-key="G" class="playable key black">
+              <h1 class="letter">G</h1>
+            </div>
+            <div data-sound="G" data-key="B" class="playable key white white1">
+              <h1 class="letter">B</h1>
+            </div>
+            <div data-sound="Ab" data-key="H" class="playable key black">
+              <h1 class="letter">H</h1>
+            </div>
+            <div data-sound="A" data-key="N" class="playable key white white1">
+              <h1 class="letter">N</h1>
+            </div>
+            <div data-sound="Bb" data-key="J" class="playable key black">
+              <h1 class="letter">J</h1>
+            </div>
+            <div data-sound="B" data-key="M" class="playable key white white1">
+              <h1 class="letter">M</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js" defer></script>
+  </body>
+</html>
